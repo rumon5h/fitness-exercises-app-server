@@ -4,15 +4,15 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 const dotenv = require("dotenv").config();
+const colors = require("colors");
 
 // middleware
 app.use(express.json());
 app.use(cors());
 
-console.log(process.env.DATABASE);
-
+// connection to database
 mongoose.connect(process.env.DATABASE).then( () => {
-    console.log('Database connected successfully!');
+    console.log('Database connected successfully!'.green.bold);
 });
 
 
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server is listening on port", PORT);
+  console.log("Server is listening on port".yellow.bold, PORT);
 });
 
 
