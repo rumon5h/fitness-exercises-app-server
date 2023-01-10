@@ -60,7 +60,8 @@ const exercisesSchema = mongoose.Schema({
         required : true,
         trim: true,
         minLength: [3, 'Name must be at least 3 characters long!'],
-        maxLength: [255, 'Name cannot be longer than 255 characters']
+        maxLength: [255, 'Name cannot be longer than 255 characters'],
+        unique: true
     },
     target:{
         type : String,
