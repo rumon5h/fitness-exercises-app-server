@@ -28,4 +28,4 @@ app.listen(PORT, () => {
 
 const exerciseRoute = require("./v1/routes/exercises.route");
 
-app.use('/api/v1/exercise', exerciseRoute);
+app.use('/api/v1/exercises', exerciseRoute);
